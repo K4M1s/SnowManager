@@ -1,0 +1,56 @@
+# Delay between snow spawn in ticks:
+snowSpawnDelay: 5
+
+# Snow spawn radius
+spawnRadius: 64
+
+# Blocks on which snow should not be spawned (Enter material name):
+ignoredBlocks:
+  - WATER
+  - LILY_PAD
+  - CACTUS
+  - LAVA
+  - LADDER
+  - CHEST
+  - ENDER_CHEST
+  - TRAPPED_CHEST
+  - IRON_BARS
+  - DAYLIGHT_DETECTOR
+  - LECTERN
+  - REPEATER
+  - COMPARATOR
+  - CONDUIT
+  - BOOKSHELF
+  - ENCHANTING_TABLE
+  - CAKE
+  - SEA_PICKLE
+  - END_ROD
+  - FLOWER_POT
+  - END_PORTAL_FRAME
+  - CAULDRON
+  - BREWING_STAND
+  - COMPOSTER
+  - LANTERN
+  - SOUL_LANTERN
+  - CAMPFIRE
+  - SOUL_CAMPFIRE
+  - BARREL
+  - GRINDSTONE
+  - STONECUTTER
+  - BELL
+  - GRASS_PATH
+  - FARMLAND
+
+# Ignore block if its name contains:
+ignoredBlocksByName:
+  - STAIRS
+  - SLAB
+  - CARPET
+  - DOOR
+  - GLASS_PANE
+  - WALL
+  - SKULL
+  - HEAD
+  - _BED
+  - FENCE
+  - SHULKER_BOX

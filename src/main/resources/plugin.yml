@@ -1,0 +1,6 @@
+name: SnowManager
+version: ${project.version}
+main: me.k4m1s.snowmanager.SnowManager
+api-version: 1.16
+authors: [ K4M1s ]
+description: Spawns snow near player and prevent it from melting.
