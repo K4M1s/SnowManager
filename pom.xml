@@ -6,7 +6,7 @@
 
     <groupId>me.k4m1s</groupId>
     <artifactId>SnowManager</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>SnowManager</name>
