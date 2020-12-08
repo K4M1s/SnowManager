@@ -40,6 +40,9 @@ ignoredBlocks:
   - BELL
   - GRASS_PATH
   - FARMLAND
+  - SNOW
+  - BARRIER
+  - ICE
 
 # Ignore block if its name contains:
 ignoredBlocksByName:
@@ -54,3 +57,25 @@ ignoredBlocksByName:
   - _BED
   - FENCE
   - SHULKER_BOX
+  - _ICE
+
+# Biomes where snow should NOT spawn.
+blacklistedBiomes:
+  - BADLANDS
+  - DESERT
+  - DESERT_LAKES
+  - ERODED_BADLANDS
+  - WOODED_BADLANDS_PLATEAU
+  - MODIFIED_WOODED_BADLANDS_PLATEAU
+  - WARM_OCEAN
+  - LUKEWARM_OCEAN
+  - DEEP_LUKEWARM_OCEAN
+  - OCEAN
+  - DEEP_OCEAN
+  - COLD_OCEAN
+  - DEEP_COLD_OCEAN
+  -
+
+# Worlds where snow should spawn.
+whitelistedWorlds:
+  - WORLD

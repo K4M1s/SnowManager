@@ -4,6 +4,7 @@ import me.k4m1s.snowmanager.Helpers.ConfigManager;
 import me.k4m1s.snowmanager.Helpers.Snow;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.block.Biome;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -20,6 +21,8 @@ public final class SnowManager extends JavaPlugin {
 
     private static List<Material> ignoredBlocks;
     private static List<String> ignoredBlocksByName;
+    private static List<Biome> ignoredBiomes;
+    private static List<String> whitelistedWorlds;
 
     private BukkitTask taskTimer;
 
@@ -36,7 +39,6 @@ public final class SnowManager extends JavaPlugin {
         }
 
         ignoredBlocks = new ArrayList<>();
-
         for (String materialName : config.getStringList("ignoredBlocks")) {
             Material material = Material.getMaterial(materialName);
             if (material != null)
@@ -46,6 +48,19 @@ public final class SnowManager extends JavaPlugin {
         }
 
         ignoredBlocksByName = config.getStringList("ignoredBlocksByName");
+
+        ignoredBiomes = new ArrayList<>();
+        for (String biomeName : config.getStringList("blacklistedBiomes")) {
+            try {
+                Biome biome = Biome.valueOf(biomeName);
+                ignoredBiomes.add(biome);
+            } catch(IllegalArgumentException e) {
+                Messages.sendMessage(String.format("&Biome %s is not valid!", biomeName));
+            }
+
+        }
+
+        whitelistedWorlds = config.getStringList("whitelistedWorlds");
 
         taskTimer = Bukkit.getScheduler().runTaskTimer(this, () -> {
             for(Player player : Bukkit.getOnlinePlayers()){
@@ -66,4 +81,6 @@ public final class SnowManager extends JavaPlugin {
     }
 
     public static List<String> getIgnoredBlocksByName() { return ignoredBlocksByName; }
+    public static List<Biome> getIgnoredBiomes() { return ignoredBiomes; }
+    public static List<String> getWhitelistedWorlds() { return whitelistedWorlds; }
 }
